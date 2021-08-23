@@ -9,22 +9,27 @@ const DarkModeSwitch = ()=> {
     const [darkMode, setDarkMode] = useRecoilState(darkModeAtom)
 
     return (
-    <input 
-    type="checkbox"
-    checked={darkMode}
-    onChange={(event) => setDarkMode(event.currentTarget.checked)}
-     />
-)
+        <input 
+            type="checkbox"
+            checked={darkMode}
+            onChange={(event) => setDarkMode(event.currentTarget.checked)}
+        />
+    )
 }
 
 const Button = () => {
     const darkMode = useRecoilValue(darkModeAtom)
 
     return (
-    <button style={{backgroundColor: darkMode ? 'black' : 'white', color: darkMode ? 'white' : 'black'}}>
-        Button
+        <button 
+        style={{
+            backgroundColor: darkMode ? 'black' : 'white', 
+            color: darkMode ? 'white' : 'black'
+        }}>
+            Button
         </button>
-)}
+    )
+}
 
 export const Atoms = () => (
     <div>
